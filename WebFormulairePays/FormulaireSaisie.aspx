@@ -6,10 +6,12 @@
     <div>
         <label>Nom : </label>
         <asp:TextBox ID="txtNom" runat="server"></asp:TextBox>
+        <asp:CustomValidator ID="CustomValidatorNom" runat="server" ErrorMessage="Le nom est obligatoire" ControlToValidate="txtNom" ClientValidationFunction="TxtObligatoire"></asp:CustomValidator>
     </div>
     <div>
         <label>Prénom : </label>
         <asp:TextBox ID="txtPrenom" runat="server"></asp:TextBox>
+        <asp:CustomValidator ID="CustomValidatorPrenom" runat="server" ErrorMessage="Le prénom est obligatoire" ControlToValidate="txtPrenom"></asp:CustomValidator>
     </div>
     <div>
         <label>Pays : </label>
