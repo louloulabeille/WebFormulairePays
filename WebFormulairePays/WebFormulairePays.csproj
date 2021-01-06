@@ -129,6 +129,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="pays.xml" />
+    <Content Include="Scripts\Formulaire\formulaireSaisie.js" />
     <Content Include="XmlData\pays.xml" />
     <Content Include="index.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -232,6 +233,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Photo\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
