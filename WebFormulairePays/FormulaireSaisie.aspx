@@ -6,7 +6,7 @@
     <div>
         <label>Nom : </label>
         <asp:TextBox ID="txtNom" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidatorNom" runat="server" ErrorMessage="Le nom est obligatoire." ControlToValidate="txtNom" BackColor="Red" ForeColor="White" SetFocusOnError="true" ></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidatorNom" runat="server"  ErrorMessage="Le nom est obligatoire." ControlToValidate="txtNom" BackColor="Red" ForeColor="White" SetFocusOnError="true" ></asp:RequiredFieldValidator>
         <asp:CustomValidator ID="CustomValidatorNom" ControlToValidate="txtNom" ClientValidationFunction="ValidText" runat="server" OnServerValidate="Txt_ServerValidate" ErrorMessage="La chaine saisie doit comporter entre 4 et 255 caractères." BackColor="Red" ForeColor="White"></asp:CustomValidator>
     </div>
     <div>
@@ -29,5 +29,9 @@
         <asp:Image ID="ImagePhoto" runat="server"/>
     </div>
 
+
+    <div id="application" runat="server">
+
+    </div>
 <script src="/Scripts/Formulaire/formulaireSaisie.js"></script>
 </asp:Content>

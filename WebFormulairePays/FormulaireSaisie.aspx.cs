@@ -19,6 +19,14 @@ namespace WebFormulairePays
             if ( !IsPostBack)
             {
                 RecuptPays();
+
+                Application.Lock();
+                application.InnerHtml = "<p>date et heure du début de l'application : "+Application.Get("dateDebut") +"</p> <br/>";
+                application.InnerHtml += "<p>date de début de la session : " + Session["dateDebut"].ToString() + "</p><br/>";
+                application.InnerHtml += "<p>Nombre de session ouvert : "+Application.Get("nbSession").ToString() +"</p><br/>";
+                application.InnerHtml += "<p>Nombre de requete : " + Application.Get("nbRequete").ToString() + "</p><br/>";
+                application.InnerHtml += "<p>Date de la requete : " + Context.Items["dateDebut"].ToString() + "</p><br/>";
+                Application.UnLock();
             }
         }
 
@@ -32,13 +40,16 @@ namespace WebFormulairePays
 
             // option
             listPays.Rows = 1;  //-- affiche une ligne
-
+            
             foreach (Pays pays in p )
             {
-                listPays.Items.Add(pays.LibellePays);
+                ListItem listItem = new ListItem();
+                listItem.Text = pays.LibellePays;
+                listItem.Value = pays.IdPays2;
+                listPays.Items.Add(listItem);
                 if (pays.LibellePays == "FRANCE")
                 {
-                    listPays.SelectedValue = pays.LibellePays;
+                    listPays.SelectedValue = pays.IdPays2;
                 }
             }
             
